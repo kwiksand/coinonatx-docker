@@ -4,8 +4,8 @@ set -e
 COINONATX_DATA=/home/coinonat/.CoinonatX
 CONFIG_FILE=CoinonatX.conf
 
-if [ -z $1 ] || [ "$1" == "CoinonatXd" ] || [ $(echo "$1" | cut -c1) == "-" ]; then
-  cmd=CoinonatXd
+if [ -z $1 ] || [ "$1" == "coinonatxd" ] || [ $(echo "$1" | cut -c1) == "-" ]; then
+  cmd=coinonatxd
   shift
 
   if [ ! -d $COINONATX_DATA ]; then
@@ -14,7 +14,7 @@ if [ -z $1 ] || [ "$1" == "CoinonatXd" ] || [ $(echo "$1" | cut -c1) == "-" ]; t
   fi
 
   if [ ! -f $COINONATX_DATA/$CONFIG_FILE ]; then
-    echo "$0: CoinonatXd config ($COINONATX_DATA/$CONFIG_FILE) not found, please create.  exiting...."
+    echo "$0: coinonatxd config ($COINONATX_DATA/$CONFIG_FILE) not found, please create.  exiting...."
     exit 1
   fi
 
@@ -22,7 +22,7 @@ if [ -z $1 ] || [ "$1" == "CoinonatXd" ] || [ $(echo "$1" | cut -c1) == "-" ]; t
   chown -R coinonatx "$COINONATX_DATA"
 
   if [ -z $1 ] || [ $(echo "$1" | cut -c1) == "-" ]; then
-    echo "$0: assuming arguments for CoinonatXd"
+    echo "$0: assuming arguments for coinonatxd"
 
     set -- $cmd "$@" -datadir="$COINONATX_DATA"
   else
