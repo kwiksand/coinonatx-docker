@@ -1,0 +1,9 @@
+#daemon=1
+server=1
+listen=1
+staking=0
+rpcuser=coinonatxrpc
+rpcpassword=CHANGE_PASSWORD
+rpcallowip=127.0.0.1
+rpcport=44578
+port=44678
