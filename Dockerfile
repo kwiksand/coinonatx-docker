@@ -6,7 +6,7 @@ RUN useradd -m coinonatx
 ENV DAEMON_RELEASE="master"
 ENV COINONATX_DATA=/home/coinonatx/.CoinonatX.conf
 
-USER coinonatx
+#USER coinonatx
 
 RUN cd /home/coinonatx && \
     mkdir /home/coinonatx/bin && \
