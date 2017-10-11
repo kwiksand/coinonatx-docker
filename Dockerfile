@@ -6,7 +6,7 @@ RUN useradd -m coinonatx
 ENV DAEMON_RELEASE="master"
 ENV COINONATX_DATA=/home/coinonatx/.CoinonatX.conf
 
-#USER coinonatx
+USER coinonatx
 
 RUN cd /home/coinonatx && \
     mkdir /home/coinonatx/bin && \
@@ -14,8 +14,10 @@ RUN cd /home/coinonatx && \
     chmod 700 .ssh && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
     ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts && \
-    git clone --branch $DAEMON_RELEASE https://github.com/coinonat/CoinonatX.git CoinonatXd && \
-    cd /home/coinonatx/CoinonatXd/src && \
+    git clone --branch $DAEMON_RELEASE https://github.com/coinonat/CoinonatX.git CoinonatXd
+
+USER root
+RUN cd /home/coinonatx/CoinonatXd/src && \
     make -f makefile.unix && \ 
     cd /home/coinonatx/CoinonatXd && \
     strip src/CoinonatXd && \
