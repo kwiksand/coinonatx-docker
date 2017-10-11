@@ -21,8 +21,8 @@ RUN cd /home/coinonatx/CoinonatXd/src && \
     chmod 755 leveldb/build_detect_platform && \
     make -f makefile.unix && \ 
     cd /home/coinonatx/CoinonatXd && \
-    strip src/CoinonatXd && \
-    mv src/CoinonatXd /home/coinonatx/bin && \
+    strip src/coinonatxd && \
+    mv src/coinonatxd /home/coinonatx/bin && \
     rm -rf /home/coinonatx/CoinonatXd
     
 EXPOSE 44578 44678
