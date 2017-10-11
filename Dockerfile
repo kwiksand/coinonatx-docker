@@ -18,6 +18,7 @@ RUN cd /home/coinonatx && \
 
 USER root
 RUN cd /home/coinonatx/CoinonatXd/src && \
+    chmod 755 levledb/build_detect_platform && \
     make -f makefile.unix && \ 
     cd /home/coinonatx/CoinonatXd && \
     strip src/CoinonatXd && \
