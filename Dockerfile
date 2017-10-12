@@ -15,7 +15,7 @@ RUN cd /home/coinonatx && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
     ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts && \
     git clone --branch $DAEMON_RELEASE https://github.com/coinonat/CoinonatX.git CoinonatXd && \
-    cd src/ && \
+    cd /home/coinonatx/CoinonatXd/src && \
 
 #USER root
 #RUN cd /home/coinonatx/CoinonatXd/src && \
