@@ -38,8 +38,7 @@ RUN chmod 777 /entrypoint.sh && \
     echo "\n# Some aliases to make the coinonatx clients/tools easier to access\nalias coinonatxd='/usr/bin/coinonatxd -conf=/home/coinonatx/.coinonatx/coinonatx.conf'\nalias coinonatxd='/usr/bin/coinonatxd -conf=/home/coinonatx/.coinonatx/coinonatx.conf'\n\n[ ! -z \"\$TERM\" -a -r /etc/motd ] && cat /etc/motd" >> /etc/bash.bashrc && \
     echo "coinonatx (XCXT) Cryptocoin Daemon\n\nUsage:\n coinonatxd help - List help options\n coinonatxd listtransactions - List Transactions\n\n" > /etc/motd && \
     chmod 755 /home/coinonatx/bin/coinonatxd && \
-    mv /home/coinonatx/bin/coinonatxd /usr/bin/coinonatxd && \
-    ln -s /usr/bin/coinonatxd /usr/bin/coinonatxd
+    mv /home/coinonatx/bin/coinonatxd /usr/bin/coinonatxd
 
 ENTRYPOINT ["/entrypoint.sh"]
 
