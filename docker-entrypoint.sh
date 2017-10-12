@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-COINONATX_DATA=/home/coinonat/.CoinonatX
+COINONATX_DATA=/home/coinonatx/.CoinonatX
 CONFIG_FILE=CoinonatX.conf
 
 if [ -z $1 ] || [ "$1" == "coinonatxd" ] || [ $(echo "$1" | cut -c1) == "-" ]; then
