@@ -6,5 +6,5 @@ daemon:
   - "44578:44578"
   - "44678:44678"
   volumes:
-  - /media/crypto/coinonatx:/home/coinonatx/.CoinonatX
+  - /media/crypto/coinonatx:/home/coinonatx/.coinonatx
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -e
-COINONATX_DATA=/home/coinonatx/.CoinonatX
-CONFIG_FILE=CoinonatX.conf
+COINONATX_DATA=/home/coinonatx/.coinonatx
+CONFIG_FILE=coinonatx.conf
 
 if [ -z $1 ] || [ "$1" == "coinonatxd" ] || [ $(echo "$1" | cut -c1) == "-" ]; then
   cmd=coinonatxd
@@ -34,5 +34,5 @@ elif [ "$1" == "coinonatx-cli" ] || [ "$1" == "coinonatx-tx" ]; then
 
   exec gosu coinonatx "$@"
 else
-  echo "This entrypoint will only execute CoinonatXd, coinonatx-cli and coinonatx-tx"
+  echo "This entrypoint will only execute coinonatxd"
 fi
